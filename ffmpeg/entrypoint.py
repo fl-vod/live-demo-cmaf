@@ -50,7 +50,7 @@ hostname = os.environ["HOSTNAME"] if "HOSTNAME" in os.environ else "ffmpeg"
 frame_rate = os.environ["FRAME_RATE"] if "FRAME_RATE" in os.environ else "25"
 gop_length = os.environ["GOP_LENGTH"] if "GOP_LENGTH" in os.environ else "24"
 
-logo_overlay = os.environ["LOGO_OVERLAY"] if "LOGO_OVERLAY" in os.environ else "https://raw.githubusercontent.com/unifiedstreaming/live-demo/master/ffmpeg/usp_logo_white.png"
+logo_overlay = os.environ["LOGO_OVERLAY"] if "LOGO_OVERLAY" in os.environ else "https://cdn.shortpixel.ai/spai/w_377+q_lossy+ret_img+to_webp/https://firstlight.ai/wp-content/uploads/2021/03/300ppi-logotype-transparent.png"
 logo_filter = ""
 if logo_overlay:
     logo_overlay = ["-i", logo_overlay]
@@ -158,13 +158,13 @@ y=25: x=iw/2-iw/7: c=0x00000000@1: w=iw/3.5: h=36: t=fill,
 drawtext=timecode_rate={max_framerate_int}: timecode='{now_timecode}\\:{now_frames}'" : tc24hmax=1: fontsize=32: x=(w-tw)/2+tw/2: y=30: fontcolor=white,
 drawtext=text='%{{pts\:gmtime\:{now_seconds}\:%Y-%m-%d}}\ ': fontsize=32: x=(w-tw)/2-tw/2: y=30: fontcolor=white,
 drawtext=
-    text='Live Media Ingest (CMAF)':
+    text='Firstlight - Live Demo Channel, CMAF':
     fontsize=32:
     x=(w-text_w)/2:
     y=75:
     fontcolor=white,
 drawtext=
-    text='Live Media Ingest (CMAF)':
+    text='Firstlight - Live Demo Channel, CMAF ':
     fontsize=32:
     x=(w-text_w)/2:
     y=75:
@@ -173,7 +173,7 @@ drawtext=
 drawtext=
     fontcolor=white:
     fontsize=20:
-    text='Dual Encoder Sync - Active ContainerID {hostname}':
+    text='Encoder - Active Container {hostname}':
     x=(w-text_w)/2:
     y=125
     [v];
