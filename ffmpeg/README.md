@@ -89,3 +89,10 @@ fontsize=32: x=(w-tw)/2: y=30: fontcolor=white[v+tc]; \
 ```
 
 Configuration is done by passing in environment variables defined in the docker-compose.yaml.
+
+mp4split --license_key= -o flmus2demo.isml --archiving=1 --archive_length=3600 --archive_segment_length=1800 --dvr_window_length=30 --restart_on_encoder_reconnect --mpd.min_buffer_time=48/25 --mpd.suggested_presentation_delay=48/25 --hls.minimum_fragment_length=48/25 --mpd.minimum_fragment_length=48/25 --mpd.segment_template=time --hls.fmp4 --variant_set='systemBitrate==20000000 || type!="video"'
+
+
+mp4split --license_key= -o http://10.113.129.232/flmus2demo/flmus2demo.isml flmus2demo.isml
+
+curl -v -X POST -d @flmus2demo.isml https://usp-origin3.sbox.live.firstlight.ai/flmus2demo/flmus2demo.isml
